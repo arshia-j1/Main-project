@@ -8,11 +8,11 @@
 @font-face {
   font-family: "vazir";
   src:
-    url("../fonts/Farsi-Digits-Without-Latin/Vazir-Medium-FD-WOL.eot")
+    url("../fonts/font/Farsi-Digits-Without-Latin/Vazir-Medium-FD-WOL.eot")
       format(eot),
-    url("../fonts/Farsi-Digits-Without-Latin/Vazir-Medium-FD-WOL.woff")
+    url("../fonts/font/Farsi-Digits-Without-Latin/Vazir-Medium-FD-WOL.woff")
       format(woff),
-    url("../fonts/Farsi-Digits-Without-Latin/Vazir-Medium-FD-WOL.woff2")
+    url("../fonts/font/Farsi-Digits-Without-Latin/Vazir-Medium-FD-WOL.woff2")
       format(woff2);
 }
 
@@ -34,9 +34,9 @@
 
   --clr-accent: #38bdf8;
   --clr-accent-light: #7dd3fc;
+  --clr-accent-dark: #0ea5e9;
 
   /* text */
-
   --clr-grey-1: #0f172a;
   --clr-grey-2: #475569;
   --clr-grey-3: #cbd5e1;
@@ -53,7 +53,7 @@
 
   --transition: 0.35s ease;
 
-  --light-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  --light-shadow: 0 12px 30px rgba(15, 23, 42, 0.144);
 
   --dark-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
 
@@ -114,4 +114,88 @@ p {
   h1 {
     font-size: 4.5rem;
   }
+}
+
+/* center */
+
+.section-center {
+  width: 90vw;
+  max-width: var(--max-width);
+  margin: auto;
+}
+
+/* ========
+button
+========n */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-main {
+  background-color: var(--clr-accent);
+  color: var(--clr-white);
+  box-shadow: var(--light-shadow);
+}
+
+.btn-main:hover {
+  background-color: var(--clr-accent-dark);
+}
+
+.btn-outline {
+  border: 1.5px solid var(--clr-accent);
+  background: transparent;
+  color: var(--clr-accent);
+}
+
+.btn-outline:hover {
+  background-color: rgba(56, 189, 248, 0.08);
+}
+
+/* ==========
+Hero
+=========== */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  padding-top: 5rem;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(56, 189, 248, 0.18),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(99, 102, 241, 0.18),
+      transparent 40%
+    ),
+    linear-gradient(135deg, #081120, #0f172a, #172554);
+}
+
+.hero-info {
+  max-width: 620px;
+}
+
+.hero h1 {
+  color: white;
+}
+.hero p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.hero-subtitle {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--clr-accent-light);
 }
