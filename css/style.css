@@ -430,3 +430,106 @@ About
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* ========
+Projects
+========= */
+
+.projects {
+  background: linear-gradient(
+    180deg,
+    rgba(8, 17, 32, 0.98),
+    rgba(15, 23, 42, 0.98)
+  );
+}
+
+.project-center {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.project-text {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 2;
+}
+
+.project {
+  position: relative;
+  height: 220px;
+  box-shadow: var(--dark-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.project-img {
+  height: 100%;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent, rgba(8, 17, 32, 0.9));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.project-overlay h4 {
+  color: white;
+  margin-bottom: 0.3rem;
+}
+
+.project-overlay p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+/* hover */
+
+.project:hover .project-img {
+  transform: scale(1.08);
+  filter: brightness(0.6);
+}
+
+.project:hover .project-overlay {
+  opacity: 1;
+}
+
+/* desktop layout */
+
+@media (min-width: 992px) {
+  .project-center {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 200px;
+    grid-template-areas:
+      "project-1 project-1 project-2 project-2"
+      "project-1 project-1 project-3 project-4";
+  }
+  .project {
+    height: 100%;
+  }
+
+  /* project area */
+
+  .project-1 {
+    grid-area: project-1;
+  }
+  .project-2 {
+    grid-area: project-2;
+  }
+  .project-3 {
+    grid-area: project-3;
+  }
+  .project-4 {
+    grid-area: project-4;
+  }
+}
